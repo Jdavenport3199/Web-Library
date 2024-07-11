@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+
+@media (min-width: 1px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html,
+  body,
+  main {
+    width: 100%;
+    position: relative;
+    background: white;
+  }
+
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    z-index: 2;
+    color: black;
+    font-optical-sizing: auto;
+    font-style: normal;
+    line-height: 1.4;
+    font-size: clamp(12px, 2vw, 14px);
+  }
+
+  a,
+  button {
+    all: unset;
+    cursor: pointer;
+    transition: 150ms linear;
+  }
+
+  a,
+  button {
+    text-decoration: none;
+    width: fit-content;
+    display: flex;
+    transition: 150ms linear;
+  }
+
+  a:hover,
+  button:hover {
+    opacity: 0.4;
+  }
+
+  pre {
+    margin-top: 1rem;
+    background: whitesmoke;
+    padding: 1rem;
+    border: 1px solid whitesmoke;
+    overflow: auto;
+    white-space: pre-wrap;
+  }
+
+  code {
+    font-size: clamp(10px, 2vw, 12px);
+    font-family: "Noto Sans Mono", monospace;
+  }
+
+  .container-holder {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 16rem;
+    grid-gap: 2rem;
+    grid-template-areas:
+      "side-nav main";
+  }
+
+  .side-nav {
+    border-right: 1px solid whitesmoke;
+    background: #f5f5f540;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main {
+    padding: 2rem;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 45% 45%;
+  }
+
+  .item {
+    overflow: hidden;
+    border: 1px solid whitesmoke;
+    background: #f5f5f540;
+    padding: 2rem;
+  }
+
+  .card-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-block: 1rem;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 8rem;
+    border: 1px solid whitesmoke;
+    background: white;
+    transition: 350ms ease-in-out;
+  }
+
+  .card:nth-child(even) {
+    background: whitesmoke;
+  }
+
+  .card:hover {
+    flex: 3;
+  }
+}
