@@ -47,20 +47,16 @@
 
   pre {
     margin-top: 1rem;
-    background: whitesmoke;
+    background: #f5f5f540;
     padding: 1rem;
     border: 1px solid whitesmoke;
     overflow: auto;
     white-space: pre-wrap;
-  }
-
-  code {
     font-size: clamp(10px, 2vw, 12px);
     font-family: "Noto Sans Mono", monospace;
   }
 
   .container-holder {
-    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -69,59 +65,66 @@
 
   .container {
     width: 100%;
-    display: grid;
-    grid-template-columns: 16rem;
-    grid-gap: 2rem;
-    grid-template-areas:
-      "side-nav main";
+    display: flex;
+    position: relative;
   }
 
   .side-nav {
+    min-height: 100vh;
     border-right: 1px solid whitesmoke;
     background: #f5f5f540;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
+    width: 14rem;
+    position: fixed;
   }
 
   .main {
+    margin-left: 14rem;
+    width: 100%;
     padding: 2rem;
     gap: 1rem;
     display: grid;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 100%;
+    justify-content: center;
   }
 
   .item {
     overflow: hidden;
-    border: 1px solid whitesmoke;
-    background: #f5f5f540;
     padding: 2rem;
+    height: fit-content;
+    /* min-height: 250px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .card-holder {
+  .item-title-holder {
+    margin-bottom: 2rem;
+  }
+
+  .item-title {
+    font-size: clamp(14px, 2vw, 16px);
+  }
+
+  .button-holder {
+    margin-top: 1rem;
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin-block: 1rem;
+    justify-content: right;
   }
 
-  .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    height: 8rem;
-    border: 1px solid whitesmoke;
-    background: white;
-    transition: 350ms ease-in-out;
+  .item-button {
+    font-size: clamp(10px, 2vw, 12px);
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 1399px) {
+  .main {
+    grid-template-columns: 49% 49%;
   }
 
-  .card:nth-child(even) {
-    background: whitesmoke;
-  }
-
-  .card:hover {
-    flex: 3;
-  }
 }
