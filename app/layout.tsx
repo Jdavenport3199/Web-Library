@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const work_sans = Work_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Web Library",
-  description: "",
+  description: "Prebuilt TypeScript Web Assets",
 };
 
 export default function RootLayout({
@@ -16,7 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <script
+          defer
+          src="https://kit.fontawesome.com/5f2bb09986.js"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+
+      <body className={work_sans.className}>{children}</body>
     </html>
   );
 }
