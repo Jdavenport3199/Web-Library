@@ -7,37 +7,37 @@ var html = `<div className="card-holder">
   <div className="card"></div>
   <div className="card"></div>
   <div className="card"></div>
-  <div className="card" style={{ borderRight: "1px solid #007fff40" }}></div>
+  <div className="card"></div>
 </div>`;
 
-var css = `.card-holder {
+var css = `.cardHolder {
   width: 100%;
   display: flex;
   justify-content: center;
+  gap: 1rem;
 }
 
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
   height: 8rem;
+  width: 8rem;
   border: 1px solid #007fff40;
-  border-right: 0px;
   background: #007fff20;
   cursor: pointer;
   transition: 350ms ease-in-out;
 }
 
-.card:nth-child(even) {
-  background: #007fff05;
+.card:hover {
+  transform: translateY(-2rem);
 }
 
-.card:hover {
-  flex: 3;
+.cardHolder:hover > :not(:hover) {
+  background: #007fff05;
 }`;
 
-export default function InteractiveHover() {
+export default function SiblingsHover() {
   const [showCode, setShowCode] = useState<boolean>(false);
 
   return (
@@ -50,17 +50,14 @@ export default function InteractiveHover() {
         }}
       >
         <div className="item-title-holder">
-          <span className="item-title">Interactive Hover Cards</span>
+          <span className="item-title">Sibiling Hover Cards</span>
         </div>
         <div className={styles.cardHolder}>
           <div className={styles.card}></div>
           <div className={styles.card}></div>
           <div className={styles.card}></div>
           <div className={styles.card}></div>
-          <div
-            className={styles.card}
-            style={{ borderRight: "1px solid #007fff40" }}
-          ></div>
+          <div className={styles.card}></div>
         </div>
         <div className="button-holder">
           <button

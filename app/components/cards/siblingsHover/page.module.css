@@ -3,26 +3,26 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    gap: 1rem;
   }
 
   .card {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
     height: 8rem;
+    width: 8rem;
     border: 1px solid #007fff40;
-    border-right: 0px;
     background: #007fff20;
     cursor: pointer;
     transition: 350ms ease-in-out;
   }
 
-  .card:nth-child(even) {
-    background: #007fff05;
+  .card:hover {
+    transform: translateY(-2rem);
   }
 
-  .card:hover {
-    flex: 3;
+  .cardHolder:hover > :not(:hover) {
+    background: #007fff05;
   }
 }

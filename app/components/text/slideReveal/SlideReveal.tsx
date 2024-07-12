@@ -2,18 +2,16 @@
 import styles from "./page.module.css";
 import { useState } from "react";
 
-var html = 
-`<div>
-  <div className={styles.intro}>
+var html = `<div>
+  <div className="intro">
     <span>Web Library.</span>
   </div>
-  <div className={styles.slide}>
+  <div className="slide">
     <span>&nbsp;Prebuilt TypeScript Web Assets.</span>
     </div>
 </div>`;
 
-var css = 
-`.intro {
+var css = `.intro {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
@@ -74,24 +72,42 @@ export default function SlideReveal() {
   const [showCode, setShowCode] = useState<boolean>(false);
 
   return (
-    <div className="item">
-      <div className="item-title-holder">
-        <span className="item-title">Text Slide Reveal</span>
-      </div>
-      <div>
-        <div className={styles.intro}>
-          <span>Web Library.</span>
+    <div className="item" style={{ overflow: showCode ? "scroll" : "hidden" }}>
+      <div
+        className="item-display"
+        style={{
+          boxShadow: showCode ? "0 6px 8px -4px #00000010" : "none",
+          transition: "350ms ease-out",
+        }}
+      >
+        <div className="item-title-holder">
+          <span className="item-title">Text Slide Reveal</span>
         </div>
-        <div className={styles.slide}>
-          <span>&nbsp;Prebuilt TypeScript Web Assets.</span>
+        <div>
+          <div className={styles.intro}>
+            <span>Web Library.</span>
+          </div>
+          <div className={styles.slide}>
+            <span>&nbsp;Prebuilt TypeScript Web Assets.</span>
+          </div>
+        </div>
+        <div className="button-holder">
+          <button
+            className="item-button"
+            onClick={() => setShowCode(!showCode)}
+          >
+            Show Code
+          </button>
         </div>
       </div>
-      <div className="button-holder">
-        <button className="item-button" onClick={() => setShowCode(!showCode)}>
-          Show Code
-        </button>
-      </div>
-      <div style={{ display: showCode ? "block" : "none" }}>
+      <div
+        style={{
+          height: showCode ? "600px" : "0",
+          marginTop: showCode ? "0" : "-4rem",
+          padding: "2rem",
+          transition: "500ms ease-out",
+        }}
+      >
         <span>TYPESCRIPT</span>
         <pre>
           <code>{html}</code>
@@ -101,6 +117,8 @@ export default function SlideReveal() {
         <pre>
           <code>{css}</code>
         </pre>
+        <br />
+        <br />
       </div>
     </div>
   );
