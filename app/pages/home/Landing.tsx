@@ -1,6 +1,5 @@
 "use client";
 import styles from "./page.module.css";
-import { useState } from "react";
 
 type LandingProps = {
   page: string;
@@ -81,7 +80,7 @@ function Landing({ page, setPage }: LandingProps) {
             border: page === "text" ? "1px solid #007FFF40" : "",
           }}
         >
-          <i className="fa-solid fa-border-none fa-lg"></i>Text
+          <i className="fa-solid fa-font fa-lg"></i>Text
         </button>
       </div>
     </div>
