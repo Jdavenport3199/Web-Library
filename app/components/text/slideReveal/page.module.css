@@ -1,0 +1,58 @@
+@media (min-width: 1px) {
+  .intro {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    background: white;
+    z-index: 2;
+    animation: reveal 5s infinite;
+  }
+
+  .slide {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0px;
+    animation: slide 5s infinite;
+  }
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      width: 0px;
+    }
+
+    20% {
+      opacity: 1;
+      width: 0px;
+    }
+
+    80% {
+      opacity: 1;
+      width: 400px;
+    }
+
+    100% {
+      opacity: 0;
+      width: 400px;
+    }
+  }
+}

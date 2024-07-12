@@ -1,0 +1,47 @@
+@media (min-width: 1px) {
+  .scrollerForwards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: scrollForwards linear;
+    animation-timeline: scroll(root);
+  }
+
+  .scrollerBackwards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: scrollBackwards linear;
+    animation-timeline: scroll(root);
+  }
+
+  .scroller {
+    padding: 0.4rem;
+    display: flex;
+    gap: 1rem;
+
+    .scrollItem {
+      all: unset;
+    }
+  }
+
+  @keyframes scrollForwards {
+    from {
+      transform: translateX(-25%);
+    }
+
+    to {
+      transform: translateX(25%);
+    }
+  }
+
+  @keyframes scrollBackwards {
+    from {
+      transform: translateX(25%);
+    }
+
+    to {
+      transform: translateX(-25%);
+    }
+  }
+}

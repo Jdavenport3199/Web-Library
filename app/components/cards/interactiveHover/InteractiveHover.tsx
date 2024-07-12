@@ -2,39 +2,41 @@
 import styles from "./page.module.css";
 import { useState } from "react";
 
-var html = `<div className="card-holder">
-    <div className="card">1</div>
-    <div className="card">2</div>
-    <div className="card">3</div>
-    <div className="card">4</div>
-    <div className="card" style={{ borderRight: "1px solid whitesmoke" }}>5</div>
+var html = 
+`<div className="card-holder">
+  <div className="card">1</div>
+  <div className="card">2</div>
+  <div className="card">3</div>
+  <div className="card">4</div>
+  <div className="card" style={{ borderRight: "1px solid whitesmoke" }}>5</div>
 </div>`;
 
-var css = `.card-holder {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+var css = 
+`.card-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    height: 8rem;
-    border: 1px solid whitesmoke;
-    border-right: 0px;
-    background: #f5f5f540;
-    cursor: pointer;
-    transition: 350ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 8rem;
+  border: 1px solid whitesmoke;
+  border-right: 0px;
+  background: #f5f5f540;
+  cursor: pointer;
+  transition: 350ms ease-in-out;
 }
 
 .card:nth-child(even) {
-    background: #f5f5f5;
+  background: #f5f5f5;
 }
 
 .card:hover {
-    flex: 3;
+  flex: 3;
 }`;
 
 export default function InteractiveHover() {

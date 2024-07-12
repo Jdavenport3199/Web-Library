@@ -1,7 +1,9 @@
 "use client";
+import { useState } from "react";
 import InteractiveHover from "./components/cards/interactiveHover/InteractiveHover";
 import SliderNav from "./components/buttons/sliderNav/SliderNav";
-import { useState } from "react";
+import SlideReveal from "./components/text/slideReveal/SlideReveal";
+import ScrollSlide from "./components/text/scrollSlide/ScrollSlide";
 
 export default function Home() {
   const [page, setPage] = useState("buttons");
@@ -74,6 +76,15 @@ export default function Home() {
             >
               <i className="fa-solid fa-border-none fa-lg"></i>Tables
             </button>
+            <button
+              onClick={() => setPage("text")}
+              style={{
+                background: page === "text" ? "#007FFF20" : "",
+                border: page === "text" ? "1px solid #007FFF40" : "",
+              }}
+            >
+              <i className="fa-solid fa-border-none fa-lg"></i>Text
+            </button>
           </div>
 
           <div className="main">
@@ -108,6 +119,11 @@ export default function Home() {
                 <span className="item-title" style={{ padding: "1rem" }}>
                   Coming Soon...
                 </span>
+              </>
+            ) : page === "text" ? (
+              <>
+                <SlideReveal />
+                <ScrollSlide />
               </>
             ) : (
               <></>
