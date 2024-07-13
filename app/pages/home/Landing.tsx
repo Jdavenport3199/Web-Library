@@ -10,7 +10,15 @@ function Landing({ page, setPage }: LandingProps) {
   return (
     <div className={styles.container}>
       <h1>Web Library</h1>
-      <span>Prebuilt TypeScript Web Assets</span>
+      <p className={styles.description}>
+        Explore an extensive library of prebuilt TypeScript web assets,
+        meticulously crafted to streamline your development process.
+        <br />
+        Web Library features a diverse array of components, utilities, and
+        templates, designed to be integrated seamlessly into your projects.
+      </p>
+      <hr />
+      <span className="item-title">Explore Components</span>
       <div className={styles.menu}>
         <button
           className={styles.button}

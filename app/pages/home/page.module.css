@@ -1,6 +1,7 @@
 @media (min-width: 1px) {
   .container {
-    min-height: 90vh;
+    min-height: 95vh;
+    text-align: center;
     width: 70%;
     display: flex;
     justify-content: center;
@@ -9,13 +10,19 @@
     position: relative;
   }
 
+  .description {
+    color: rgb(120, 120, 120);
+    font-size: clamp(14px, 2vw, 16px);
+    margin-top: 1rem;
+  }
+
   .menu {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 4rem;
     gap: 0.4rem;
+    margin-top: 2rem;
 
     .button {
       display: flex;
@@ -28,6 +35,13 @@
       box-sizing: border-box;
       width: 10rem;
       transition: 150ms linear;
+
+
+      padding: 0.6rem;
+      padding-block: 1rem;
+      border: 1px solid whitesmoke;
+      background: white;
+      border-radius: 100rem;
     }
 
     .button:hover {

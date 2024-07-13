@@ -13,6 +13,8 @@ export default function Home() {
   return (
     <main>
       <div className="container-holder">
+      <div className="background"></div>
+      <div className="overlay"></div>
         {page === "home" ? (
           <Landing page={page} setPage={setPage} />
         ) : page !== "home" ? (
